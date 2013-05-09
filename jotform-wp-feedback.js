@@ -1,3 +1,13 @@
+/*
+    Plugin Name: JotForm Wordpress Feedback Plugin
+    Plugin URI: http://www.jotform.com/labs/wordpress
+    Description: JotForm's Wordpress Feedback Plugin
+    Version: 0.1
+    Author: Ertugrul Emre Ertekin
+    Author URI: http://ee.ertek.in
+    License: MIT
+*/
+
 jQuery(document).ready(function($){
     $.getScript("http://js.jotform.com/JotFormFormPicker.js", function(data, textStatus, jqxhr) {
         $('#pickForm').on("click",function() {

@@ -1,5 +1,5 @@
 jQuery(document).ready(function($){
-    $.getScript("http://www.jotform.com/js/form.picker.js", function(data, textStatus, jqxhr) {
+    $.getScript("http://js.jotform.com/JotFormFormPicker.js", function(data, textStatus, jqxhr) {
         $('#pickForm').on("click",function() {
             event.preventDefault();
             var jotformFormPicker = new JotFormFormPicker();

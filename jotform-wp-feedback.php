@@ -13,7 +13,7 @@ class JotFormWPFeedback {
 
     public function __construct() {
         add_action( 'admin_menu',   array($this,'addAdminMenu') );
-        add_action( 'admin_enqueue_scripts', array($this,'mw_enqueue_color_picker') );
+        add_action( 'admin_enqueue_scripts', array($this,'mw_enqueue_form_picker') );
         add_action( 'admin_init',   array($this, 'register_button_options') );
         add_action( 'wp_footer',    array($this, 'generateFeedBackCode') );
     }
@@ -23,10 +23,9 @@ class JotFormWPFeedback {
 
     }
 
-    public function mw_enqueue_color_picker( $hook_suffix ) {
+    public function mw_enqueue_form_picker( $hook_suffix ) {
         if($hook_suffix == "settings_page_jotform-feedback") {
-            wp_enqueue_style( 'wp-color-picker' );
-            wp_enqueue_script( 'my-script-handle', plugins_url('jotform-wp-feedback.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
+            wp_enqueue_script( 'jotform-wp-feedback-js', plugins_url('jotform-wp-feedback.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
         }
     }
 

@@ -25,6 +25,7 @@ class JotFormWPFeedback {
 
     public function mw_enqueue_form_picker( $hook_suffix ) {
         if($hook_suffix == "settings_page_jotform-feedback") {
+            wp_enqueue_style( 'wp-color-picker' );
             wp_enqueue_script( 'jotform-wp-feedback-js', plugins_url('jotform-wp-feedback.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
         }
     }

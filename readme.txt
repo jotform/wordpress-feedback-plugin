@@ -8,11 +8,13 @@ Stable tag: 1.0
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
-It's a simple **feedback** button with customizable settings for your JotForm forms.
+JotForm's Feedback button is an easy to use **feedback** button solution with customizable settings for your forms on JotForm.com. 
 
 == Description ==
 
+JotForm is the first web based WYSIWYG form builder. Its intuitive drag and drop user interface makes form building a breeze. Using JotForm, you can create forms, integrate them to your site and receive responses by email.
 
+It is developed mainly for webmasters, but anybody with an Internet connection can use it. JotForm is WYSIWYG, so you can still make web forms without any web design or HTML experience. Since JotForm is hosted on our servers, there are no requirements.
 
 == Installation ==
 

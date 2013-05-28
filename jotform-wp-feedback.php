@@ -16,11 +16,19 @@ class JotFormWPFeedback {
         add_action( 'admin_enqueue_scripts', array($this,'mw_enqueue_form_picker') );
         add_action( 'admin_init',   array($this, 'register_button_options') );
         add_action( 'wp_footer',    array($this, 'generateFeedBackCode') );
+        add_action( 'wp_enqueue_scripts', array($this, 'loadJotFormFeedBack') );
+    }
+
+    public function loadJotFormFeedBack() {
+        wp_enqueue_script(
+            'jotform-feedback-button',
+            'http://www.jotform.com/static/feedbackWP.js',
+            array( 'jquery','jquery-ui-core', 'jquery-ui-widget','jquery-ui-mouse','jquery-ui-draggable' )
+        );
     }
 
     public function register_button_options() {
             register_setting( 'jotform-wp-feedback-options', 'buttonOptions' );
-
     }
 
     public function mw_enqueue_form_picker( $hook_suffix ) {
@@ -55,8 +63,9 @@ class JotFormWPFeedback {
     }
 
     public function generateFeedBackCode() {
+
             $options = get_option('buttonOptions');
-            echo '<script src="http://cdn.jotfor.ms/static/feedbackWP.js?3.1.306" type="text/javascript">
+            echo '<script type="text/javascript">
                       new JotformFeedback({
                          formId     : "'.   $options["formID"].'",
                          buttonText : "'.   $options["formTitle"] .'",

@@ -56,7 +56,7 @@ class JotFormWPFeedback {
 
     public function generateFeedBackCode() {
             $options = get_option('buttonOptions');
-            echo '<script src="http://cdn.jotfor.ms/static/feedback2.js?3.1.309" type="text/javascript">
+            echo '<script src="http://cdn.jotfor.ms/static/feedbackWP.js?3.1.306" type="text/javascript">
                       new JotformFeedback({
                          formId     : "'.   $options["formID"].'",
                          buttonText : "'.   $options["formTitle"] .'",

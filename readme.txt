@@ -3,10 +3,11 @@ Contributors: jotform
 Donate link: N/A
 Tags: jotform, form, feedback, button
 Requires at least: 3.3
-Tested up to: 5.1.1
-Stable tag: 1.0.3
+Tested up to: 5.7
+Stable tag: 1.0.4
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl.html
+Requires PHP: 5.6
 
 Display a beautiful feedback button on the side of your blog. When a reader clicks on it a feedback form pops up. Completely customizable.
 

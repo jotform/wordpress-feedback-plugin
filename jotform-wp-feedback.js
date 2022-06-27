@@ -81,8 +81,14 @@ jQuery(document).ready(function ($) {
     });
 
     $('.jfb-preview-toggle-button').on('click', function (e) {
-        if ($(this).attr('data-show') === "on") {
-            $(this).animate({left:"90%"}, 2000);
+        var isShow = ($(this).attr('data-show') === "on");
+        var isSmallWidth = ($(window).width() < 769);
+
+        var showLeft = (isSmallWidth) ? "85%" : "90%";
+        var hiddenLeft = (isSmallWidth) ? "5%" : "60%";
+
+        if (isShow) {
+            $(this).animate({left: showLeft}, 2000);
             $(this).attr('data-show', 'off');
             $('.jfb-ptb-icon').attr('src', (JFBCONST.pluginUrl + "/images/preview-icon.svg"));
             $('.jfb-ptb-text').text('PREVIEW');
@@ -90,7 +96,7 @@ jQuery(document).ready(function ($) {
             return;
         }
 
-        $(this).animate({left:"60%"}, 2000);
+        $(this).animate({left:hiddenLeft}, 2000);
         $(this).attr('data-show', 'on');
         $('.jfb-ptb-icon').attr('src', (JFBCONST.pluginUrl + "/images/hide-icon.svg"));
         $('.jfb-ptb-text').text('HIDE');

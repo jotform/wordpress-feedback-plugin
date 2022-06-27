@@ -126,8 +126,7 @@
 }
 
 .jfb-main-form-container {
-    padding: 2em;
-    width: 100%;
+    padding: 2em 2em 84px 2em;
     max-width: 800px;
 }
 
@@ -607,6 +606,7 @@ div[class*="jfb-ssba-bottom-"]{
 }
 
 .jfb-preview-toggle-button {
+    cursor: pointer;
     display: flex;
     position: absolute;
     top: 32px;
@@ -680,7 +680,7 @@ div[class*="jfb-ssba-bottom-"]{
     }
 }
 
-@media screen and (max-width: 782px) {
+@media screen and (max-width: 768px) {
     /* Begin wordpress css override */
     .auto-fold #wpcontent {
         padding-left: 0;
@@ -713,7 +713,21 @@ div[class*="jfb-ssba-bottom-"]{
         flex: 0;
     }
 
+    .jfb-preview-form-svg {
+        width: 95%;
+    }
+
     .jfb-preview-main-container {
         padding-top: 120px;
+    }
+
+    .jfb-preview-toggle-button {
+        top: 48px;
+        left: 5%;
+    }
+
+    .jfb-preview-toggle-button:hover,
+    .jfb-preview-toggle-button[data-show="off"] {
+        width: 40px;
     }
 }

@@ -3,7 +3,7 @@ Contributors: jotform
 Donate link: N/A
 Tags: jotform, form, feedback, button
 Requires at least: 3.3
-Tested up to: 6.3
+Tested up to: 6.6
 Stable tag: 1.0.4
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl.html

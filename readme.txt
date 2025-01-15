@@ -3,7 +3,7 @@ Contributors: jotform
 Donate link: N/A
 Tags: jotform, form, feedback, button
 Requires at least: 3.3
-Tested up to: 6.6
+Tested up to: 6.7.1
 Stable tag: 1.0.4
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -44,7 +44,7 @@ Feedback buttons will increase the quantity and the quality of feedback you rece
 
 = Is JotForm Feedback Buttons Customizable? =
 
-JotForm is a web form builder with over 1 million users. JotForm provides the most customizable feedback buttons available anywhere. You will be able to take advantage of JotForm's experience with feedback buttons.
+JotForm is a web form builder with over 25 million users. JotForm provides the most customizable feedback buttons available anywhere. You will be able to take advantage of JotForm's experience with feedback buttons.
 
 You can customize both the feedback button and the form inside. On the button you can customize button colors, font colors, location of the button. The form inside is also completely customizable. You can customize the title of the form, questions on the form and even the thank you page shown after the form submission.
 

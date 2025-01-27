@@ -1,10 +1,10 @@
 <?php
 /*
-    Plugin Name: JotForm Feedback Button
+    Plugin Name: Jotform Feedback Button
     Plugin URI: http://www.jotform.com/labs/wordpress
     Description: Display a beautiful feedback button on the side of your blog. When a reader clicks on it a feedback form pops up. Completely customizable.
-    Version: 1.0.4
-    Author: JotForm.com
+    Version: 1.0.5
+    Author: Jotform.com
     Author URI: http://www.jotform.com
     License: MIT
 */
@@ -28,7 +28,7 @@ class JotFormWPFeedback {
     }
 
     public function register_button_options() {
-        register_setting( 'jotform-wp-feedback-options', 'buttonOptions' );
+            register_setting( 'jotform-wp-feedback-options', 'buttonOptions' );
     }
 
     public function mw_enqueue_form_picker( $hook_suffix ) {
@@ -39,7 +39,7 @@ class JotFormWPFeedback {
     }
 
     public function addAdminMenu() {
-        add_options_page( 'JotForm Feedback Button', 'JotForm Feedback Button', 'manage_options', 'jotform-feedback', array($this,'showOptions') );
+        add_options_page( 'Jotform Feedback Button', 'Jotform Feedback Button', 'manage_options', 'jotform-feedback', array($this,'showOptions') );
     }
 
     public function showOptions() {
@@ -49,23 +49,23 @@ class JotFormWPFeedback {
 
         $options = get_option('buttonOptions');
         if(!$options) {
-            $options = array("formTitle" => "Feedback",
-                "buttonColor" => "#F59202",
-                "labelColor" => "#FFFFFF",
-                "screenAlignment" => "bottom",
-                "horizontalAlignment" => "right",
+            $options = array("formTitle" => "Feedback", 
+                "buttonColor" => "#F59202", 
+                "labelColor" => "#FFFFFF", 
+                "screenAlignment" => "bottom", 
+                "horizontalAlignment" => "right", 
                 "lightBoxType" => "false",
                 "formWidth" => 700,
                 "formHeight" => 500
-            );
+                );
         }
         include plugin_dir_path(__FILE__) . "jotform-wp-feedback-options.php";
     }
 
     public function generateFeedBackCode() {
 
-        $options = get_option('buttonOptions');
-        echo '<script type="text/javascript">
+            $options = get_option('buttonOptions');
+            echo '<script type="text/javascript">
                       new JotformFeedback({
                          formId     : "'.   $options["formID"].'",
                          buttonText : "'.   $options["formTitle"] .'",

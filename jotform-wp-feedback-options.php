@@ -1,5 +1,5 @@
 <div class="wrap">
-<div class="icon32"><img src="<?=plugins_url( 'images/feedback32x32.png' , __FILE__ );?>"/><br></div><h2>JotForm Feedback Button</h2>
+<div class="icon32"><img src="<?=plugins_url( 'images/feedback32x32.png' , __FILE__ );?>"/><br></div><h2>Jotform Feedback Button</h2>
 
 <form method="post" action="options.php">
     <?php settings_fields( 'jotform-wp-feedback-options'); ?>

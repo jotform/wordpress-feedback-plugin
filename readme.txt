@@ -4,7 +4,7 @@ Donate link: N/A
 Tags: jotform, form, feedback, button
 Requires at least: 5.3
 Tested up to: 6.7
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl.html
 Requires PHP: 7.4
@@ -73,8 +73,12 @@ Jotform Feedback Button is a simple button that pulls up a feedback form from yo
 
 == Changelog ==
 
-1. Form picker added to select your forms from your Jotform account.
-2. Button settings added.
+= 1.0.6 =
+* docs: update description
+
+= 1.0 =
+* Form picker added to select your forms from your Jotform account.
+* Button settings added.
 
 == Upgrade notice ==
 

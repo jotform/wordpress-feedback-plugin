@@ -1,12 +1,11 @@
 === Jotform Feedback Button ===
 Contributors: jotform
-Donate link: N/A
 Tags: jotform, form, feedback, button
 Requires at least: 5.3
-Tested up to: 6.7
-Stable tag: 1.0.6
-License: GNU General Public License v3
-License URI: http://www.gnu.org/licenses/gpl.html
+Tested up to: 6.8
+Stable tag: 1.0.7
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires PHP: 7.4
 
 Display a beautiful feedback button on the side of your blog. When a reader clicks on it a feedback form pops up. Completely customizable.
@@ -72,6 +71,8 @@ Jotform Feedback Button is a simple button that pulls up a feedback form from yo
 4. Feedback Form in Action
 
 == Changelog ==
+= 1.0.7 =
+* Fix: codebase refactor
 
 = 1.0.6 =
 * docs: update description

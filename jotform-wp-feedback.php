@@ -54,7 +54,7 @@ class JotformWPFeedback {
         );
     }
 
-    function jotform_feedback_button_sanitize_options($input) {
+    public function jotform_feedback_button_sanitize_options($input) {
         if (is_array($input)) {
             foreach ($input as $key => $value) {
                 $input[$key] = sanitize_text_field($value);
@@ -113,16 +113,16 @@ class JotformWPFeedback {
         $options = get_option('buttonOptions');
         if (!empty($options["formID"])) {
             $data = [
-                'formId' => esc_html__($options["formID"]),
-                'buttonText' => esc_html__($options["formTitle"]),
-                'base' => esc_html__('https://www.jotform.com/'),
-                'background' => esc_html__($options["buttonColor"]),
-                'fontColor ' => esc_html__($options["labelColor"]),
-                'buttonSide' => esc_html__($options["screenAlignment"]),
-                'buttonAlign' => esc_html__($options["horizontalAlignment"]),
-                'type' => esc_html__($options["lightBoxType"]),
-                'width' => esc_html__($options["formWidth"]),
-                'height' => esc_html__($options["formHeight"])
+                'formId' => esc_html($options["formID"]),
+                'buttonText' => esc_html($options["formTitle"]),
+                'base' => esc_url('https://www.jotform.com/'),
+                'background' => esc_html($options["buttonColor"]),
+                'fontColor ' => esc_html($options["labelColor"]),
+                'buttonSide' => esc_html($options["screenAlignment"]),
+                'buttonAlign' => esc_html($options["horizontalAlignment"]),
+                'type' => esc_html($options["lightBoxType"]),
+                'width' => esc_html($options["formWidth"]),
+                'height' => esc_html($options["formHeight"])
             ];
 
             echo '

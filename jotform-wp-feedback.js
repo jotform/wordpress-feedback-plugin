@@ -1,14 +1,3 @@
-/**
-* Plugin Name: Jotform Feedback Button
-* Plugin URI: http://wordpress.org/plugins/jotform-feedback-button/
-* Description: Display a beautiful feedback button on the side of your blog. When a reader clicks on it a feedback form pops up. Completely customizable.
-* Author: Jotform
-* License: GPLv2 or later
-* License URI: https://www.gnu.org/licenses/gpl-2.0.html
-* Version: 1.0.7
-* Author URI: https://www.jotform.com/
-*/
-
 jQuery(document).ready(function($){
     $.getScript("//js.jotform.com/JotFormFormPicker.js", function(data, textStatus, jqxhr) {
         $('#pickForm').on("click",function() {

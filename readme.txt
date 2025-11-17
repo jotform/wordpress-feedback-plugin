@@ -1,5 +1,5 @@
 === Jotform Feedback Button ===
-Contributors: jotform
+Contributors: Jotform
 Tags: jotform, form, feedback, button
 Requires at least: 5.3
 Tested up to: 6.8
@@ -59,6 +59,18 @@ Yes, when you enable the feedback button, it will be shown on all of the pages o
 
 Jotform Feedback Button is a simple button that pulls up a feedback form from your Jotform account. It runs on Jotform servers so it will never cause security or performance problems on your web site.
 
+== External Services ==
+
+This plugin connects to external services to provide functionality and improve user experience. Below are the details of the external services used:
+
+**Jotform Feedback Button**
+   - [Privacy Policy](https://www.jotform.com/privacy/?utm_source=wordpress&utm_medium=plugin_directory&utm_campaign=chatbot_plugin_content&utm_content=privacy)
+   - [Terms of Use](https://www.jotform.com/terms/?utm_source=wordpress&utm_medium=plugin_directory&utm_campaign=chatbot_plugin_content&utm_content=terms)
+
+**Service usage**
+- The plugin makes external requests on the following domain to render feedback button functionalities:
+   `**https://www.jotform.com**`
+- The plugin uses the domain [**https://www.jotform.com**] as a service to deliver and render the feedback button.
 
 == Screenshots ==
 

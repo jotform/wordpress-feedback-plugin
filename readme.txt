@@ -3,7 +3,7 @@ Contributors: Jotform
 Tags: jotform, form, feedback, button
 Requires at least: 5.3
 Tested up to: 6.8
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires PHP: 7.4
@@ -64,13 +64,18 @@ Jotform Feedback Button is a simple button that pulls up a feedback form from yo
 This plugin connects to external services to provide functionality and improve user experience. Below are the details of the external services used:
 
 **Jotform Feedback Button**
-   - [Privacy Policy](https://www.jotform.com/privacy/?utm_source=wordpress&utm_medium=plugin_directory&utm_campaign=chatbot_plugin_content&utm_content=privacy)
-   - [Terms of Use](https://www.jotform.com/terms/?utm_source=wordpress&utm_medium=plugin_directory&utm_campaign=chatbot_plugin_content&utm_content=terms)
+   - [Privacy Policy](https://www.jotform.com/privacy/?utm_source=wordpress&utm_medium=plugin_directory&utm_campaign=feedback_button_plugin_content&utm_content=privacy)
+   - [Terms of Use](https://www.jotform.com/terms/?utm_source=wordpress&utm_medium=plugin_directory&utm_campaign=feedback_button_plugin_content&utm_content=terms)
 
 **Service usage**
-- The plugin makes external requests on the following domain to render feedback button functionalities:
+- The plugin makes external requests on the following domain to render feedback form functionalities:
    `**https://www.jotform.com**`
-- The plugin uses the domain [**https://www.jotform.com**] as a service to deliver and render the feedback button.
+- The plugin uses the domain [**https://www.jotform.com**] as a service to deliver and render the feedback form.
+
+**Asset usage**
+- The plugin makes external asset requests on the following domain to enable feedback button functionalities:
+   `**https://js.jotform.com**`
+- The plugin uses the domain [**https://js.jotform.com**] as a asset service to deliver and render the embedded feedback button.
 
 == Screenshots ==
 
@@ -83,6 +88,9 @@ This plugin connects to external services to provide functionality and improve u
 4. Feedback Form in Action
 
 == Changelog ==
+= 1.0.8 =
+* Fix: codebase refactor
+
 = 1.0.7 =
 * Fix: codebase refactor
 

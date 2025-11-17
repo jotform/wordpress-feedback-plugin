@@ -7,7 +7,7 @@
 * Author: Jotform
 * License: GPLv2 or later
 * License URI: https://www.gnu.org/licenses/gpl-2.0.html
-* Version: 1.0.7
+* Version: 1.0.8
 * Author URI: https://www.jotform.com/
 */
 
@@ -15,6 +15,10 @@
 if (!defined('ABSPATH')) {
     exit(0);
 }
+
+define('JWPF_PLUGIN_VERSION', '1.0.8');
+define('JWPF_PLUGIN_DIR', plugin_dir_path(__FILE__));
+define('JWPF_PLUGIN_URL', plugin_dir_url(__FILE__));
 
 class JotformWPFeedback {
     public function __construct() {
@@ -40,29 +44,59 @@ class JotformWPFeedback {
     }
 
     public function jwpf_register_button_options() {
-        register_setting('jotform-wp-feedback-options', 'buttonOptions');
+        register_setting(
+            'jotform-wp-feedback-options',
+            'buttonOptions',
+            [
+                'type'              => 'array',
+                'sanitize_callback' => [$this, 'jotform_feedback_button_sanitize_options'],
+            ]
+        );
+    }
+
+    function jotform_feedback_button_sanitize_options($input) {
+        if (is_array($input)) {
+            foreach ($input as $key => $value) {
+                $input[$key] = sanitize_text_field($value);
+            }
+        } else {
+            $input = sanitize_text_field($input);
+        }
+        return $input;
     }
 
     public function jwpf_mw_enqueue_form_picker($hook_suffix) {
         if ($hook_suffix == "settings_page_jotform-feedback") {
             wp_enqueue_style('wp-color-picker');
-            wp_enqueue_script('jotform-wp-feedback-js', plugins_url('jotform-wp-feedback.js', __FILE__), ['wp-color-picker'], false, true);
+            wp_enqueue_script(
+                'jotform-wp-feedback-js',
+                JWPF_PLUGIN_URL . 'src/js/jotform-wp-feedback.js',
+                ['wp-color-picker'],
+                JWPF_PLUGIN_VERSION,
+                true
+            );
         }
     }
 
     public function jwpf_addAdminMenu() {
-        add_options_page('Jotform Feedback Button', 'Jotform Feedback Button', 'manage_options', 'jotform-feedback', [$this, 'jwpf_showOptions']);
+        add_options_page(
+            esc_html__('Jotform Feedback Button'),
+            esc_html__('Jotform Feedback Button'),
+            'manage_options',
+            'jotform-feedback',
+            [$this, 'jwpf_showOptions']
+        );
     }
 
     public function jwpf_showOptions() {
         if (!current_user_can('manage_options')) {
-            wp_die(esc_html(__('You do not have sufficient permissions to access this page.')));
+            wp_die(esc_html__('You do not have sufficient permissions to access this page.'));
         }
 
         $options = get_option('buttonOptions');
         if (!$options) {
             $options = [
-                "formTitle" => "Feedback",
+                "formTitle" => esc_html__("Feedback"),
                 "buttonColor" => "#F59202",
                 "labelColor" => "#FFFFFF",
                 "screenAlignment" => "bottom",
@@ -72,23 +106,23 @@ class JotformWPFeedback {
                 "formHeight" => 500
             ];
         }
-        include plugin_dir_path(__FILE__) . "jotform-wp-feedback-options.php";
+        include JWPF_PLUGIN_DIR . "/jotform-wp-feedback-options.php";
     }
 
     public function jwpf_generateFeedBackCode() {
         $options = get_option('buttonOptions');
         if (!empty($options["formID"])) {
             $data = [
-                'formId' => $options["formID"],
-                'buttonText' => $options["formTitle"],
-                'base' => 'https://www.jotform.com/',
-                'background' => $options["buttonColor"],
-                'fontColor ' => $options["labelColor"],
-                'buttonSide' => $options["screenAlignment"],
-                'buttonAlign' => $options["horizontalAlignment"],
-                'type' => $options["lightBoxType"],
-                'width' => $options["formWidth"],
-                'height' => $options["formHeight"]
+                'formId' => esc_html__($options["formID"]),
+                'buttonText' => esc_html__($options["formTitle"]),
+                'base' => esc_html__('https://www.jotform.com/'),
+                'background' => esc_html__($options["buttonColor"]),
+                'fontColor ' => esc_html__($options["labelColor"]),
+                'buttonSide' => esc_html__($options["screenAlignment"]),
+                'buttonAlign' => esc_html__($options["horizontalAlignment"]),
+                'type' => esc_html__($options["lightBoxType"]),
+                'width' => esc_html__($options["formWidth"]),
+                'height' => esc_html__($options["formHeight"])
             ];
 
             echo '

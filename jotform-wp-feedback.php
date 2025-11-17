@@ -3,10 +3,11 @@
     Plugin Name: Jotform Feedback Button
     Plugin URI: http://www.jotform.com/labs/wordpress
     Description: Display a beautiful feedback button on the side of your blog. When a reader clicks on it a feedback form pops up. Completely customizable.
-    Version: 1.0.6
+    Version: 1.0.7
     Author: Jotform.com
     Author URI: http://www.jotform.com
-    License: MIT
+    License: GPLv2 or later
+    License URI: https://www.gnu.org/licenses/gpl-2.0.html
 */
 
 class JotFormWPFeedback {
@@ -63,22 +64,23 @@ class JotFormWPFeedback {
     }
 
     public function generateFeedBackCode() {
-
-            $options = get_option('buttonOptions');
+        $options = get_option('buttonOptions');
+        if (!empty($options["formID"])) {
             echo '<script type="text/javascript">
-                      new JotformFeedback({
-                         formId     : "'.   $options["formID"].'",
-                         buttonText : "'.   $options["formTitle"] .'",
-                         base       : "https://www.jotform.com/",
-                         background : "'.   $options["buttonColor"].'",
-                         fontColor  : "'.   $options["labelColor"] .'",
-                         buttonSide : "'.   $options["screenAlignment"] .'",
-                         buttonAlign: "'.   $options["horizontalAlignment"] .'",
-                         type       : "'.   $options["lightBoxType"] .'",
-                         width      : "'.   $options["formWidth"] .'",
-                         height     : "'.   $options["formHeight"] .'",
-                      });
-                    </script>';
+            new JotformFeedback({
+                formId     : "' . $options["formID"] . '",
+                buttonText : "' . $options["formTitle"] . '",
+                base       : "https://www.jotform.com/",
+                background : "' . $options["buttonColor"] . '",
+                fontColor  : "' . $options["labelColor"] . '",
+                buttonSide : "' . $options["screenAlignment"] . '",
+                buttonAlign: "' . $options["horizontalAlignment"] . '",
+                type       : "' . $options["lightBoxType"] . '",
+                width      : "' . $options["formWidth"] . '",
+                height     : "' . $options["formHeight"] . '",
+            });
+            </script>';
+        }
     }
 }
 

@@ -7,7 +7,7 @@
 * Author: Jotform
 * License: GPLv2 or later
 * License URI: https://www.gnu.org/licenses/gpl-2.0.html
-* Version: 1.0.8
+* Version: 1.0.9
 * Author URI: https://www.jotform.com/
 */
 
@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
     exit(0);
 }
 
-define('JWPF_PLUGIN_VERSION', '1.0.8');
+define('JWPF_PLUGIN_VERSION', '1.0.9');
 define('JWPF_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('JWPF_PLUGIN_URL', plugin_dir_url(__FILE__));
 
@@ -54,7 +54,7 @@ class JotformWPFeedback {
         );
     }
 
-    function jotform_feedback_button_sanitize_options($input) {
+    public function jotform_feedback_button_sanitize_options($input) {
         if (is_array($input)) {
             foreach ($input as $key => $value) {
                 $input[$key] = sanitize_text_field($value);
@@ -113,16 +113,16 @@ class JotformWPFeedback {
         $options = get_option('buttonOptions');
         if (!empty($options["formID"])) {
             $data = [
-                'formId' => esc_html__($options["formID"]),
-                'buttonText' => esc_html__($options["formTitle"]),
-                'base' => esc_html__('https://www.jotform.com/'),
-                'background' => esc_html__($options["buttonColor"]),
-                'fontColor ' => esc_html__($options["labelColor"]),
-                'buttonSide' => esc_html__($options["screenAlignment"]),
-                'buttonAlign' => esc_html__($options["horizontalAlignment"]),
-                'type' => esc_html__($options["lightBoxType"]),
-                'width' => esc_html__($options["formWidth"]),
-                'height' => esc_html__($options["formHeight"])
+                'formId' => esc_html($options["formID"]),
+                'buttonText' => esc_html($options["formTitle"]),
+                'base' => esc_url('https://www.jotform.com/'),
+                'background' => esc_html($options["buttonColor"]),
+                'fontColor ' => esc_html($options["labelColor"]),
+                'buttonSide' => esc_html($options["screenAlignment"]),
+                'buttonAlign' => esc_html($options["horizontalAlignment"]),
+                'type' => esc_html($options["lightBoxType"]),
+                'width' => esc_html($options["formWidth"]),
+                'height' => esc_html($options["formHeight"])
             ];
 
             echo '

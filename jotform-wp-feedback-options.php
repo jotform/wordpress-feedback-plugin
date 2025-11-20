@@ -7,7 +7,7 @@ if (!defined('ABSPATH')) {
 ?>
 <div class="wrap">
     <div class="icon32"><img src="<?php echo esc_url(JWPF_PLUGIN_DIR . '/images/feedback32x32.png'); ?>"/><br></div>
-    <h2>Jotform Feedback Button</h2>
+    <h2>Feedback Button - Jotform</h2>
     <form method="post" action="options.php">
         <?php settings_fields('jotform-wp-feedback-options'); ?>
         <?php do_settings_fields('jotform-wp-feedback-options', "buttonOptions"); ?>

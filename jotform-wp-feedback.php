@@ -1,13 +1,13 @@
 <?php
 
 /**
-* Plugin Name: Jotform Feedback Button
+* Plugin Name: Feedback Button - Jotform
 * Plugin URI: http://wordpress.org/plugins/jotform-feedback-button/
 * Description: Display a beautiful feedback button on the side of your blog. When a reader clicks on it a feedback form pops up. Completely customizable.
 * Author: Jotform
 * License: GPLv2 or later
 * License URI: https://www.gnu.org/licenses/gpl-2.0.html
-* Version: 1.0.9
+* Version: 1.1.0
 * Author URI: https://www.jotform.com/
 */
 
@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
     exit(0);
 }
 
-define('JWPF_PLUGIN_VERSION', '1.0.9');
+define('JWPF_PLUGIN_VERSION', '1.1.0');
 define('JWPF_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('JWPF_PLUGIN_URL', plugin_dir_url(__FILE__));
 
@@ -80,8 +80,8 @@ class JotformWPFeedback {
 
     public function jwpf_addAdminMenu() {
         add_options_page(
-            esc_html__('Jotform Feedback Button'),
-            esc_html__('Jotform Feedback Button'),
+            esc_html__('Feedback Button'),
+            esc_html__('Feedback Button'),
             'manage_options',
             'jotform-feedback',
             [$this, 'jwpf_showOptions']

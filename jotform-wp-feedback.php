@@ -32,7 +32,7 @@ class JotformWPFeedback {
     public function jwpf_loadJotFormFeedBack() {
         wp_enqueue_script(
             'jotform-feedback-button',
-            'https://www.jotform.com/static/feedbackWP.js',
+            'https://cdn.jotfor.ms/s/static/latest/feedbackWP.js',
             [
                 'jquery',
                 'jquery-ui-core',

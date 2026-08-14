@@ -2,8 +2,8 @@
 Contributors: Jotform
 Tags: feedback, feedback button, survey, user feedback, bug report
 Requires at least: 5.3
-Tested up to: 6.8
-Stable tag: 1.1.1
+Tested up to: 7.1
+Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires PHP: 7.4
@@ -136,6 +136,9 @@ This plugin connects to external services to provide additional functionality an
 4. Feedback Form in Action
 
 == Changelog ==
+= 1.1.2 =
+* Update: Tested up to WordPress 7.1 and readme.txt file updated
+
 = 1.1.1 =
 * Update: readme content updated
 

@@ -7,8 +7,8 @@
 * Author: Jotform
 * License: GPLv2 or later
 * License URI: https://www.gnu.org/licenses/gpl-2.0.html
-* Version: 1.1.1
 * Author URI: https://www.jotform.com/
+* Version: 1.1.2
 */
 
 // Exit if accessed directly
@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
     exit(0);
 }
 
-define('JWPF_PLUGIN_VERSION', '1.1.1');
+define('JWPF_PLUGIN_VERSION', '1.1.2');
 define('JWPF_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('JWPF_PLUGIN_URL', plugin_dir_url(__FILE__));
 
